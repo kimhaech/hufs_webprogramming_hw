@@ -15,7 +15,36 @@
     BUCKET LIST / CORONA INFORMATION
     <hr>
   </nav>
+  <!--login-->
   <section>
+    <div class="texts">
+      <div class="login">
+        <h2>Login</h2>
+        <div id="ID">
+          <input id="InputID" type="text" placeholder="Id">
+        </div>
+        <div id="PW">
+          <input id="InputPW" type="password" placeholder="Password">
+        </div>
+        <form class="loginButton">
+          <input id="loginbtn" type="submit" value="Login">
+        </form>
+      </div>
+  <!--join-->
+      <div class="join">
+        <h2>Make Account</h2>
+        <div id="mid">
+          <input id="id" type="text" placeholder="input you id">
+        </div>
+        <div id="mpw">
+          <input id="pw" type="password" placeholder="input your password">
+        </div>
+        <form class="joinButton">
+          <input id="jbtn" type="submit" value="save">
+        </form>
+      </div>
+    </div>
+    
     <form class='hidden' id='login-form'>
       <input required maxlength="20" type="text" placeholder="Input your ID">
     </form>
@@ -24,13 +53,12 @@
       <input type="password" placeholder="Input your PW">
     </form> -->
     <h1 id="greeting" class="hidden"></h1>
-    <form id="bucket-form">
+    <form id="bucket-form" class="hidden">
       <input type="text" placeholder="Everything what you want to do.">
     </form>
     <ul id='bucket-list'></ul>
   </section>
   <footer>
-    Footer
   </footer>
   <script src="app.js"></script>
   <script src="bucketlist.js"></script>
