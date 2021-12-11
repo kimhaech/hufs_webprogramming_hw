@@ -4,10 +4,37 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="stylecorona.css" />
     <title>WebProgramming_Page</title>
+    <style>
+      nav {
+        margin-left: auto;
+        margin-right: auto;
+        width: 80%;
+      }
+      section {
+        margin-left: 20px;
+        margin-right: 20px;
+      }
+      .cbox {
+        width: 20px;
+        height: 20px;
+      }
+      .colorBox {
+        width: 20px;
+        height: 20px;
+        float: right;
+        margin: 4px 4px 0px 0px;
+        cursor: crosshair;
+      }
+    </style>
   </head>
   <body>
-    <header></header>
+    <div style="display: flex; justify-content: right">
+      <div id="cbox" class="cbox" style="flex: 1">
+        <div id="colorList"></div>
+      </div>
+    </div>
     <nav>
       <button type="button" onclick="location.href='home.html'">
         BUCKET LIST
@@ -18,5 +45,68 @@
       <!-- BUCKET LIST / CORONA INFORMATION -->
       <hr />
     </nav>
+    <!-- width: 90%; margin: 10px auto -->
+    <section>
+      <div class="box" style="text-align: center; justify-items: center">
+        <!-- <center> -->
+        <h1>확진자 현황</h1>
+        <div style="text-align: center">
+          <div style="display: inline-block">
+            <h3>일일 발생 현황</h3>
+            <iframe
+              src="count.html"
+              width="550"
+              height="400"
+              scrolling="no"
+              frameborder="0"
+              >코로나 확진자 현황</iframe
+            >
+          </div>
+          <div style="display: inline-block">
+            <h3>지역별 발생 현황</h3>
+            <iframe
+              src="chart.html"
+              width="550"
+              height="400"
+              scrolling="no"
+              frameborder="0"
+              >코로나 지역</iframe
+            >
+          </div>
+        </div>
+
+        <h1>정부보도자료</h1>
+        <div style="text-align: center">
+          <div style="display: inline-block">
+            <h3>단계적 일상회복</h3>
+            <iframe
+              src="guideline.html"
+              width="750"
+              height="500"
+              scrolling="yes"
+              frameborder="0"
+              >보도자료</iframe
+            >
+          </div>
+          <div style="display: inline-block">
+            <h3>특별 방역</h3>
+            <iframe
+              src="special.html"
+              width="750"
+              height="500"
+              scrolling="yes"
+              frameborder="0"
+              >보도자료</iframe
+            >
+          </div>
+        </div>
+
+        <h1>분야별 개편 방향</h1>
+
+        <!-- </center> -->
+      </div>
+    </section>
+
+    <script src="background.js"></script>
   </body>
 </html>
