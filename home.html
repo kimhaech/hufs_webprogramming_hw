@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>WebProgramming_Page</title>
+  </head>
+  <body>
+    <header></header>
+    <nav>
+      <button type="button" onclick="location.href='home.html'">
+        BUCKET LIST
+      </button>
+      <button type="button" onclick="location.href='corona.html'">
+        CORONA INFORMATION
+      </button>
+      <!-- BUCKET LIST / CORONA INFORMATION -->
+      <hr />
+    </nav>
+    <!--login-->
+    <section>
+      <div class="texts">
+        <div id="login" class="">
+          <h2>Login</h2>
+          <div id="ID">
+            <input id="InputID" type="text" placeholder="Id" />
+          </div>
+          <div id="PW">
+            <input id="InputPW" type="password" placeholder="Password" />
+          </div>
+          <form class="loginButton">
+            <input id="loginbtn" type="submit" value="Login" />
+          </form>
+        </div>
+        <!--join-->
+        <div id="join">
+          <h2>Make Account</h2>
+          <div id="mid">
+            <input id="id" type="text" placeholder="input you id" />
+          </div>
+          <div id="mpw">
+            <input id="pw" type="password" placeholder="input your password" />
+          </div>
+          <form class="joinButton">
+            <input id="jbtn" type="submit" value="save" />
+          </form>
+        </div>
+      </div>
+
+      <!-- <form class="hidden" id="login-form">
+        <input
+          required
+          maxlength="20"
+          type="text"
+          placeholder="Input your ID"
+        />
+      </form> -->
+      <!-- PW
+    <form>
+      <input type="password" placeholder="Input your PW">
+    </form> -->
+      <h1 id="greeting" class="hidden"></h1>
+      <form id="bucket-form" class="hidden">
+        <input type="text" placeholder="Everything what you want to do." />
+      </form>
+      <ul id="bucket-list"></ul>
+    </section>
+    <footer></footer>
+    <script src="login.js"></script>
+    <script src="account.js"></script>
+    <script src="bucketlist.js"></script>
+  </body>
+</html>
