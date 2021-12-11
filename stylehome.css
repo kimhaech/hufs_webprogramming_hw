@@ -1,3 +1,11 @@
-.hidden{
+.hidden {
   display: none;
+}
+
+.cbtn {
+  background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+  background-repeat: no-repeat;
+  background-size: 100% 50%;
+  background-position: 0 88%;
+  transition: background-size 0.25s ease-in;
 }

@@ -1,8 +1,6 @@
-// const loginForm = document.getElementById("login-form") // 로그인 폼
-// const loginInput = loginForm.querySelector("input") // 로그인 입력 창
 const greeting = document.querySelector('#greeting') // 인사말
 const bucketlistInput = document.querySelector('#bucket-form') // 버킷리스트 입력 창
-
+const keyw = document.getElementById('keyw') // 키워드 보여주는 태그
 //
 const loginForm = document.getElementById('login') // 로그인 폼
 const joinForm = document.getElementById('join') // 회원가입 폼
@@ -13,7 +11,6 @@ const check_pw = lpw_check.querySelector('input')
 const loginButton = document.querySelector('.loginButton') // 로그인 버튼
 
 const HIDDEN = 'hidden'
-// const USERNAME_KEY = 'username'
 
 function CheckValue(event) {
   event.preventDefault()
@@ -26,6 +23,7 @@ function CheckValue(event) {
     location.reload()
   } else {
     alert('WRONG ID or PASSWORD')
+    location.reload()
   }
 }
 
@@ -39,6 +37,7 @@ function hide(ID) {
   button.addEventListener('click', logout) // 클릭시 로그아웃 함수 호출
   greeting.appendChild(button) // 인사말 옆 버튼 추가
   greeting.classList.remove(HIDDEN)
+  keyw.classList.remove(HIDDEN)
   localStorage.setItem('onlogin', `${ID}`)
   bucketlistInput.classList.remove(HIDDEN)
   // logcalStorage.getItem(`login${ID}`) = 'true' // 로그인 상태
@@ -51,6 +50,7 @@ function logout() {
   joinForm.classList.remove(HIDDEN)
   greeting.classList.add(HIDDEN)
   bucketlistInput.classList.add(HIDDEN)
+  keyw.classList.add(HIDDEN)
   location.reload()
 }
 
@@ -64,33 +64,8 @@ if (localStorage.getItem('onlogin') !== null) {
   button.addEventListener('click', logout) // 클릭시 로그아웃 함수 호출
   greeting.appendChild(button) // 인사말 옆 버튼 추가
   greeting.classList.remove(HIDDEN)
+  keyw.classList.remove(HIDDEN)
   bucketlistInput.classList.remove(HIDDEN)
 }
 
-// function logout() {}
-
 loginButton.addEventListener('submit', CheckValue) // 로그인 버튼 클릭시 함수 호출
-//
-
-// function onLoginSubmit(event){
-//   event.preventDefault()  // 기본동장 막기(submit)
-//   loginForm.classList.add(HIDDEN) // form이 사라지도록  classname추가
-//   const username = loginInput.value // 사용자 이름 저장
-//   localStorage.setItem("username",username)
-//   greeting.innerText = `Hello ${username}`
-//   greeting.classList.remove(HIDDEN)
-// }
-
-// loginForm.addEventListener("submit",onLoginSubmit)
-
-// const savedUsername = localStorage.getItem(USERNAME_KEY)
-
-// if(savedUsername === null){ // 저장된 유저이름이 없다
-//   // login 띄움
-//   loginForm.classList.remove(HIDDEN)
-//   loginForm.addEventListener("submit",onLoginSubmit)
-//   }else{
-//   greeting.innerText = `Hello ${savedUsername}`
-//   greeting.classList.remove(HIDDEN)
-//   bucketlistInput.classList.remove(HIDDEN)
-// }

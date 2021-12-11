@@ -7,10 +7,29 @@
     <link rel="stylesheet" href="stylehome.css" />
     <title>WebProgramming_Page</title>
     <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+      }
       nav {
         margin-left: auto;
         margin-right: auto;
         width: 80%;
+      }
+      nav button {
+        padding-bottom: 10px;
+        border-bottom: none;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        background-color: transparent;
+        font-size: 15px;
+      }
+      nav button:hover {
+        background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+        background-repeat: no-repeat;
+        background-size: 100% 50%;
+        background-position: 0 88%;
+        transition: background-size 0.25s ease-in;
       }
       section {
         margin-left: 20px;
@@ -31,6 +50,34 @@
         margin: 4px 4px 0px 0px;
         cursor: crosshair;
       }
+      #ID > input {
+        border-bottom: 1px solid;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        background-color: transparent;
+      }
+      #PW > input {
+        border-bottom: 1px solid;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        background-color: transparent;
+      }
+      #mid > input {
+        border-bottom: 1px solid;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        background-color: transparent;
+      }
+      #mpw > input {
+        border-bottom: 1px solid;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        background-color: transparent;
+      }
       .greetingdiv {
         margin-left: 9%;
         width: auto;
@@ -40,23 +87,44 @@
       }
       #greeting button {
         margin: 10px;
+        margin: 10px;
+        background-color: transparent;
+        border-style: hidden;
+        font-weight: 700;
       }
-      .bucket-outer {
-        text-align: center;
+      #greeting button:hover {
+        border-bottom: solid;
       }
-      #bucket-form {
-        display: inline-block;
+      #bucket-form > input {
+        width: 30%;
+        height: 50px;
+        font-size: 150%;
+        border-bottom: 2px solid;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        background-color: transparent;
+      }
+      #bucket-list {
+        width: 30%;
+        text-align: left;
+        font-size: 20px;
+        line-height: 2;
+        margin-left: 10px;
+        top: auto;
       }
     </style>
   </head>
   <body>
+    <!--background color select button-->
     <div style="display: flex; justify-content: right">
       <div id="cbox" class="cbox" style="flex: 1">
         <div id="colorList"></div>
       </div>
     </div>
+    <!--menu bar-->
     <nav>
-      <button type="button" onclick="location.href='home.html'">
+      <button class="cbtn" type="button" onclick="location.href='home.html'">
         BUCKET LIST
       </button>
       <button type="button" onclick="location.href='corona.html'">
@@ -65,12 +133,17 @@
 
       <!-- BUCKET LIST / CORONA INFORMATION -->
       <hr />
-    </nav>
 
+      <!--weather-->
+    </nav>
+    <div id="weather" style="position: relative; text-align: right">
+      <span></span>
+      <span></span>
+    </div>
     <!--login-->
     <section>
       <div class="texts">
-        <div id="login" class="">
+        <div id="login">
           <h2>Login</h2>
           <div id="ID">
             <input id="InputID" type="text" placeholder="Id" />
@@ -79,10 +152,20 @@
             <input id="InputPW" type="password" placeholder="Password" />
           </div>
           <form class="loginButton">
-            <input id="loginbtn" type="submit" value="Login" />
+            <input
+              id="loginbtn"
+              type="submit"
+              value="Login"
+              style="
+                margin: 10px;
+                background-color: transparent;
+                border: none;
+                font-weight: 700;
+              "
+            />
           </form>
         </div>
-        <!--join-->
+        <!--make account-->
         <div id="join">
           <h2>Make Account</h2>
           <div id="mid">
@@ -92,26 +175,49 @@
             <input id="pw" type="password" placeholder="input your password" />
           </div>
           <form class="joinButton">
-            <input id="jbtn" type="submit" value="save" />
+            <input
+              id="jbtn"
+              type="submit"
+              value="save"
+              style="
+                margin: 10px;
+                background-color: transparent;
+                border: none;
+                font-weight: 700;
+              "
+            />
           </form>
         </div>
       </div>
-
+      <!--after login part-->
       <div class="greetingdiv">
         <h1 id="greeting" class="hidden"></h1>
       </div>
 
-      <div class="bucket-outer">
+      <div
+        id="keyw"
+        class="hidden"
+        style="position: absolute; top: 20%; right: 10%; float: right"
+      >
+        <h4>Today's keyword is</h4>
+        <hr />
+        <span id="keyword"></span>
+      </div>
+      <center>
         <form id="bucket-form" class="hidden">
+          <h1>Lists</h1>
           <input type="text" placeholder="Everything what you want to do." />
         </form>
         <ul id="bucket-list"></ul>
-      </div>
+      </center>
     </section>
     <footer></footer>
     <script src="login.js"></script>
     <script src="account.js"></script>
     <script src="bucketlist.js"></script>
     <script src="background.js"></script>
+    <script src="weather.js"></script>
+    <script src="keyword.js"></script>
+    <script src="button.js"></script>
   </body>
 </html>

@@ -10,8 +10,8 @@ function init() {
     '#f7e600',
     '#7dbad5',
     '#e091a9',
-    '#86e6c2',
     '#81c147',
+    '#ffffff',
   ] //색상코드를 원하는 만큼 넣어주세요
   var tag = ''
   for (i = 0; i < colorChip.length; i++) {
@@ -40,4 +40,10 @@ function colorSet(colorPick) {
   }
   document.getElementById(colorPick.id).className += ' selected'
   selectedColor = colorPick.id
+  localStorage.setItem('cur_color', `${selectedColor}`)
+}
+
+if (localStorage.getItem('cur_color') !== null) {
+  document.querySelector('body').style.background =
+    localStorage.getItem('cur_color') //배경색을 선택한 색상박스의 id 값으로 지정해주기
 }

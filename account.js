@@ -11,10 +11,15 @@ const jbtn = document.querySelector('.joinButton') // 생성 버튼
 //   localStorage.setItem(`lists${BUCKET_KEY}`, JSON.stringify(Listsf)) // local storage에 아이디에 해당하는 리스트 저장
 // }
 function handleSubmitId(event) {
-  let cur_id = mid.value // 입력한 ID
-  let cur_pw = mpw.value // 입력한 PW
-  // let cur_id_login = `login${cur_id}` // 입력한 ID의 로그인 유무
-  localStorage.setItem(cur_id, cur_pw) // localStorage에 입력한 id,pw저장
+  if (mid.value === '' || mpw.value === '') {
+    alert('input values')
+  } else {
+    let cur_id = mid.value // 입력한 ID
+    let cur_pw = mpw.value // 입력한 PW
+    // let cur_id_login = `login${cur_id}` // 입력한 ID의 로그인 유무
+    localStorage.setItem(cur_id, cur_pw) // localStorage에 입력한 id,pw저장
+  }
+
   // saveLists(cur_id) // 리스트 저장을 위한 key값 전달
   // localStorage.setItem(cur_id_login, `login${cur_id}`) // 입력한 ID의 로그인 유무
 }
