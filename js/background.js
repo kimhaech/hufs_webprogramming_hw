@@ -12,10 +12,10 @@ function init() {
     '#e091a9',
     '#81c147',
     '#ffffff',
-  ] //색상코드를 원하는 만큼 넣어주세요
+  ] //색상코드
   var tag = ''
   for (i = 0; i < colorChip.length; i++) {
-    //colorBox 의 id명을 색상명으로 지정해주기.
+    //colorBox 의 id명을 색상명으로 지정
     tag +=
       '<div id=' +
       colorChip[i] +
@@ -25,13 +25,13 @@ function init() {
 
   var colorBoxList = document.getElementsByClassName('colorBox')
   for (i = 0; i < colorBoxList.length; i++) {
-    colorBoxList[i].style.background = colorBoxList[i].id //id인 색상명을 colorBox의 배경색으로 지정해주기
+    colorBoxList[i].style.background = colorBoxList[i].id //id인 색상명을 colorBox의 배경색으로 지정
   }
 }
 
 // onclick event
 function colorSet(colorPick) {
-  document.querySelector('body').style.background = colorPick.id //배경색을 선택한 색상박스의 id 값으로 지정해주기
+  document.querySelector('body').style.background = colorPick.id //배경색을 선택한 색상박스의 id 값으로 지정
 
   if (selectedColor != null) {
     document.getElementById(selectedColor).className = document
@@ -45,5 +45,5 @@ function colorSet(colorPick) {
 
 if (localStorage.getItem('cur_color') !== null) {
   document.querySelector('body').style.background =
-    localStorage.getItem('cur_color') //배경색을 선택한 색상박스의 id 값으로 지정해주기
+    localStorage.getItem('cur_color') //배경색을 선택한 색상박스의 id 값으로 지정
 }
